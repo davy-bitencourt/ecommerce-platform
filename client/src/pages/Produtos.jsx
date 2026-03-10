@@ -1,9 +1,11 @@
-import './Pages.css';
 import { useState, useEffect } from 'react';
-import { produtos } from '../assets/produtos';
-import Barra from '../components/barra.jsx';
-import Carrinho from '../components/carrinho.jsx';
+import { produtos } from '../assets/produtos.js';
 import { useNavigate } from "react-router-dom";
+
+import Barra from '../components/Barra.jsx';
+import Carrinho from '../components/Carrinho.jsx';
+
+import "../styles/styles.css";
 
 function Produtos() {
   const [carrinho, setCarrinho] = useState([]);

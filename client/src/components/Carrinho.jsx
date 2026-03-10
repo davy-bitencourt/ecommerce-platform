@@ -1,4 +1,4 @@
-import '../pages/Pages.css';
+import "../styles/styles.css";
 
 function Carrinho({ itens, fechar, removerItem, finalizarCompra }) {
   return (

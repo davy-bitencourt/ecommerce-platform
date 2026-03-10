@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Produtos from './pages/produtos.jsx'
-import Login from "./pages/login.jsx";
-import Cadastro from "./pages/cadastro.jsx";
+import Produtos from './pages/Produtos.jsx'
+import Login from "./pages/Login.jsx";
+import Cadastro from "./pages/Cadastro.jsx";
 import NoPage from "./pages/noPage.jsx"; 
-import ProdutoCriar from "./pages/produtoCriar.jsx";
+import ProdutoCriar from "./pages/ProdutoCriar.jsx";
 
 function App() {
 

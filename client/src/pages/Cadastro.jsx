@@ -1,5 +1,5 @@
-import "./Pages.css";
-import Barra from "../components/barra.jsx";
+import Barra from "../components/Barra.jsx";
+import "../styles/styles.css";
 
 export default function Cadastro(){
     return (
@@ -7,7 +7,7 @@ export default function Cadastro(){
         
         <Barra/>
 
-        <div className="form-container">
+        <form>
             <h2> Cadastro </h2>
             <input className="b" type="text" placeholder="Nome de Usuário"/>
             <input className="b" type="text" placeholder="E-mail"/>
@@ -20,7 +20,7 @@ export default function Cadastro(){
             </label>
 
             <button className="botao"> Criar Conta </button>
-        </div>
+        </form>
     </div>
     )
 }

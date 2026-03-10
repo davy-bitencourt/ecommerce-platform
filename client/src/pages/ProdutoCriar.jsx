@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Barra from "../components/barra";
+import Barra from "../components/Barra";
 import { produtos as produtosIniciais } from "../assets/produtos";
-import "./Pages.css";
+import "../styles/styles.css";
 
 function ProdutoCriar() {
   const [produtos, setProdutos] = useState(() => {
@@ -58,15 +58,13 @@ function ProdutoCriar() {
   return (
     <div>
       <Barra />
-      <div className="form-container">
+      <form onSubmit={handleSubmit}>
         <h2>{editandoIndex !== null ? "Editar Produto" : "Cadastrar Produto"}</h2>
-        <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)} required/>
-          <input type="number" placeholder="Preço" value={preco} onChange={(e) => setPreco(e.target.value)} required/>
-          <input type="text" placeholder="URL da Imagem" value={imagem} onChange={(e) => setImagem(e.target.value)} required/>
-          <button type="submit" className="botao"> {editandoIndex !== null ? "Salvar Alterações" : "Cadastrar Produto"}</button>
-        </form>
-      </div>
+        <input type="text" placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)} required/>
+        <input type="number" placeholder="Preço" value={preco} onChange={(e) => setPreco(e.target.value)} required/>
+        <input type="text" placeholder="URL da Imagem" value={imagem} onChange={(e) => setImagem(e.target.value)} required/>
+        <button type="submit" className="botao"> {editandoIndex !== null ? "Salvar Alterações" : "Cadastrar Produto"}</button>
+      </form>
 
       <div className="lista-produtos">
         <h3>Produtos Cadastrados</h3>
@@ -81,8 +79,8 @@ function ProdutoCriar() {
             </div>
 
             <div>
-              <button className="editar" onClick={() => editarProduto(index)}>✏️</button>
-              <button className="excluir" onClick={() => excluirProduto(index)}>🗑️</button>
+              <button className="editar" onClick={() => editarProduto(index)}>Edit</button>
+              <button className="excluir" onClick={() => excluirProduto(index)}>Excuir️</button>
             </div>
 
           </div>

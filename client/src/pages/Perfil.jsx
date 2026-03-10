@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import "./Pages.css";
+import "../styles/styles.css";
 
 function Perfil(){
     return (

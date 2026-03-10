@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import "../pages/Pages.css";
+
+import "../styles/styles.css";
 
 export default function Barra() {
   const { user, logout } = useAuth();

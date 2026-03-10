@@ -1,3 +1,5 @@
+import '../styles/styles.css'
+
 function noPage(){
     return (
      <>

@@ -1,0 +1,209 @@
+:root {
+  --color-primary: orange;
+  --color-primary-dark: #e69500;
+
+  --color-bg: #ffffff;
+  --color-text: #111;
+  --color-muted: #777;
+  --color-border: #ddd;
+
+  --radius: 0.5rem;
+  --shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+  --container-width: 1280px;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+#root {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* layout helpers */
+.flex {
+  display: flex;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+/* buttons */
+.btn {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.6rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+  transform: scale(1.03);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--color-primary);
+  color: white;
+
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
+
+/* product cards */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
+  padding: 1rem;
+  text-align: center;
+
+  width: 15rem;
+  height: 16rem;
+}
+
+.product-id {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.product-name {
+  font-weight: bold;
+}
+
+.product-price {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* forms */
+form {
+  max-width: 400px;
+  margin: 2rem auto;
+
+  padding: 2rem;
+
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 0.3rem;
+}
+
+/* cart */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart {
+  width: 320px;
+  height: 100%;
+
+  background: white;
+  padding: 1.5rem;
+
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cart-footer {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+}
+
+/* utility */
+.text-center {
+  text-align: center;
+}
+
+.muted {
+  color: var(--color-muted);
+}
