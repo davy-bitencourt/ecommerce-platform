@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+
+  db:
+    image: postgres:16
+    container_name: ecommerce-db
+    restart: always
+    environment:
+      POSTGRES_USER: ecommerce
+      POSTGRES_PASSWORD: ecommerce123
+      POSTGRES_DB: ecommerce_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ecommerce-net
+
+  server:
+    build: ./server
+    container_name: ecommerce-server
+    restart: always
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ecommerce_db
+      DB_USER: ecommerce
+      DB_PASSWORD: ecommerce123
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+    networks:
+      - ecommerce-net
+
+  client:
+    build: ./client
+    container_name: ecommerce-client
+    restart: always
+    depends_on:
+      - server
+    ports:
+      - "5173:5173"   # ajuste conforme seu frontend
+    networks:
+      - ecommerce-net
+
+volumes:
+  postgres_data:
+
+networks:
+  ecommerce-net:
